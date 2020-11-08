@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    <body>
+        <ul id="lstBook">
+            <li class="book">java</li>
+            <li>android</li>
+            <li class="book">python</li>
+            <li>ai</li>
+            <style>
+                #lstBook.book{
+                    border: 1px solid red;
+                }
+                #lstBook:nth-child(3){
+                    color: red;
+                }
+            </style>
+        </ul>
+        <script>
+            // //访问元素
+            // //1、旧的dom方法
+            // const oList=document.querySelector('#lstBook')
+            // console.log(oList.innerHTML)
+            // console.log(oList.nodeType)
+            // // const oChild=oList.firstChild.nodeType//求子节点,空格也是一个节点
+            // console.log(oList.firstElementChild.nodeType)//求第一个元素子节点
+            // console.log(document.doctype.nextSibling.innerHTML)
+            // // console.log(document.doctype.nextSibling.firstElementChild.nextSibling.innerHTML)
+            // //2、通过id获取元素
+            // // const oList=document.getElementById('lstBook')
+            // //3、通过
+            // const oItem=document.getElementsByTagName('li')
+            // console.log(oItem.length)
+            // //4、通过类名
+            // const Item2=document.getElementsByClassName('book')
+            // console.log(Item2.length)
+
+            // oList.removeChild(oList.lastChild)//删掉最后一个
+            // console.log(oItem.length)
+
+            // //5、
+            // const oList=document.querySelector('#lstBook.book')
+            // console.log(oList.innerHTML)
+
+            //6、通过查询元素选择器获取元素
+            const oList =document.querySelectorAll('#lstBook.book')
+            console.log(oList.length)
+            const oList=document.querySelector('#lstBook')
+            oList.removeChild(document.querySelector('#lstBook:nth-child(3)'))
+            console.log(oList.length)
+
+        </script>
+        <!-- <button onclick="console.log('hello')"></button>
+        <script>
+            console.log('hello')
+        </script> -->
+        <!-- <script src="test.js"></script> -->
+    </body>
+</html>
